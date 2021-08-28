@@ -51,7 +51,7 @@ Alternativamente, ao invés de entrar na shell, você pode usar `poetry run uget
 
 Você pode empacotar o programa em tgz ou wheel utilizando `poetry build`
 
-### Nix 
+### Nix
 Caso você tenha o [Nix](https://nixos.org/) instalado (pode ser utilizado em MacOS ou qualquer Linux, ou dentro do próprio NixOS), você pode optar por usá-lo no lugar do poetry.
 
 Você precisa ter o [suporte a Flakes habilitado](https://nixos.wiki/wiki/Flakes#Installing_flakes).
@@ -60,12 +60,19 @@ Você pode entrar num ambiente de desenvolvimento igual ao do `poetry shell` uti
 
 Alternativamente, ao invés de entrar na shell, você pode usar `nix run` para rodar o programa diretamente. Você também pode usar `nix shell` para entrar num ambiente de release onde o comando `uget-exemplo` está disponível.
 
-## Desenvolvimento 
+## Desenvolvimento
 
 ### Dependências e lock
-O arquivo `pyproject.toml` especifica o projeto, inclusive suas dependências e dependências devs (essas últimas não vão pra release). As dependências funcionam com [semantic versioning](https://semver.org/). Você pode requerer a versão exata com `X.Y.Z` (não recomendável), uma versão aproximadamente igual com `~X.Y.Z` ou `X.Y` (recomendado para dependências que você não tem certeza se seguem semantic versioning), ou qualquer versão compátivel com `^X.Y.Z` ou `X` (recomendável para dependências bem estabelecidas).
+O arquivo `pyproject.toml` especifica o projeto, inclusive suas dependências e dependências devs (essas últimas não vão pra release). As dependências funcionam com [semantic versioning](https://semver.org/).
 
-Você *não* precisa pinar a versão exata para ter estabilidade, pois o `poetry.lock` se encarrega disso. Recomendo que você use `~` ou `^` para ter versões sempre compatíveis (nenhum desses pode atualizar para breaking changes, na teoria), que quando você utilizar `poetry lock`, o poetry pegará versões compatíveis com seus requisitos (lembre-se de testar se nada quebrou depois de fazer isso, pois nem todos os pacotes respeitam semantic versioning como deveriam). Isso evita que você fique em versões antigas com bugs já resolvidos.
+Você pode:
+- requerer a versão exata com `X.Y.Z` (não recomendável)
+- uma versão aproximadamente igual com `~X.Y.Z` ou `X.Y` (recomendado para dependências que você não tem certeza se seguem semantic versioning corretamente)
+- qualquer versão compátivel com `^X.Y.Z` ou `X` (recomendável para dependências com releases confiáveis)
+
+Você *não* precisa pinar a versão exata para ter estabilidade, pois o `poetry.lock` se encarrega disso.
+
+Recomendo que você use `~` ou `^` para ter versões sempre compatíveis (nenhum desses pode atualizar para breaking changes, na teoria), que quando você utilizar `poetry lock`, o poetry pegará versões compatíveis com seus requisitos (lembre-se de testar se nada quebrou depois de fazer isso, pois nem todos os pacotes respeitam semantic versioning como deveriam). Isso evita que você fique em versões antigas com bugs já resolvidos.
 
 ### Lint
 
