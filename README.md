@@ -92,8 +92,8 @@ O arquivo `pyproject.toml` especifica o projeto, inclusive suas dependências e 
 
 Você pode:
 - requerer a versão exata com `X.Y.Z` (não recomendável)
-- uma versão aproximadamente igual com `~X.Y.Z` ou `X.Y` (recomendado para dependências que você não tem certeza se seguem semantic versioning corretamente)
-- qualquer versão compátivel com `^X.Y.Z` ou `X` (recomendável para dependências com releases confiáveis)
+- uma versão aproximadamente igual (inclui futuros bug fixes) com `~X.Y.Z` ou `X.Y` (recomendado para dependências que você não tem certeza se seguem semantic versioning corretamente)
+- qualquer versão compátivel (inclui novas features que não quebrem compatibilidade) com `^X.Y.Z` ou `X` (recomendável para dependências com releases confiáveis)
 
 Você *não* precisa pinar a versão exata para ter estabilidade, pois o `poetry.lock` se encarrega disso.
 
