@@ -1,0 +1,29 @@
+# Esse arquivo especifica algumas configurações de editores, para editores que suportam
+# Vários editores (e o próprio github) suportam
+
+# Aqui links para plugins para os que não suportam nativamente:
+# Vim: https://github.com/editorconfig/editorconfig-vim
+# VSCode: https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig
+# Sublime: https://github.com/sindresorhus/editorconfig-sublime
+# Emacs: https://github.com/editorconfig/editorconfig-emacs
+# Micro: https://github.com/10sr/editorconfig-micro
+
+# Demarca raiz de projeto, e que ele não deve buscar pastas acima
+root = true
+
+# Se aplica a todos os arquivos
+[*]
+# Usar line ending do unix
+end_of_line = lf
+# Inserir \n no final
+insert_final_newline = true
+# Usar utf8
+charset = utf-8
+# Remover whitespace adicional
+trim_trailing_whitespace = true
+
+# Se aplica a todos aos arquivos .py
+[*.py]
+# Usar 4 espaços pra identar
+indent_style = space
+indent_size = 4

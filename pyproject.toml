@@ -1,0 +1,25 @@
+[tool.poetry]
+# TODO: Coloque o nome do projeto em kebab-case
+name = "uget-exemplo"
+version = "0.1.0"
+# TODO: Coloque a a descrião do projeto
+description = "Repositório de projeto exemplo"
+# TODO: Coloque seu nome e email
+authors = ["Gabriel Fontes <gabriel.fontes@uget.express>"]
+
+# Adicione dependências do projeto para execução aqui
+[tool.poetry.dependencies]
+python = "^3.8"
+
+# Adicione dependências de desenvolvimento (exemplo: formatador e lint) aqui
+[tool.poetry.dev-dependencies]
+flake8 = "^3.9"
+flake8-annotations = "^2.6"
+
+[tool.poetry.scripts]
+# TODO: Troque uget-exemplo pelo nome em kebab-case, e uget_exemplo pelo nome em snake_case
+uget-exemplo = "uget_exemplo.__main__:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

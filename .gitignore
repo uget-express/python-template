@@ -1,0 +1,16 @@
+# Build do poetry
+dist
+
+# Cache de JIT do python
+**/*/__pycache__
+
+# Cache do direnv
+.direnv
+
+# Build do Nix
+result
+
+# Caso você utilize dotenv para definir variáveis de ambiente nesse projeto, NUNCA commite sua .env para o repositório
+# Ao invés disso, crie uma example.env explicando o que deve ser colocado.
+# E na produção especifique as variáveis de ambiente usando as ferramentas de lá, NUNCA use dotenv.
+.env
