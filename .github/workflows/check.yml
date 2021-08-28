@@ -12,5 +12,6 @@ jobs:
       - uses: abatilo/actions-poetry@v2.0.0
       - run: poetry install
       - name: Check formatting and types
-        run: |
-          poetry run flake8
+        run: poetry run flake8
+      - name: Run tests
+        run: poetry run pytest
