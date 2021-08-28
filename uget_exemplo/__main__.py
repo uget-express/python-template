@@ -8,8 +8,8 @@ def main() -> int:
     print(bom_dia.mensagem("U-Get"))
     return 0
 
-
-# Esse guard faz que a função main só execute caso o programa seja chamado como script (e não como biblioteca)
+# Esse guard faz que a função main só execute caso
+# o programa seja chamado como script (e não como biblioteca)
 if __name__ == "__main__":
-    # Chame a main dentro de exit(), para retornar o status de execução do programa
+    # Chame a main dentro de exit(), p/ retornar o status de execução
     exit(main())
