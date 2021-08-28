@@ -30,17 +30,42 @@ Essa seção fala sobre como esse repo está estruturado, sinta-se livre para ap
 **Lembre-se de editar os lugares onde tem `uget-exemplo` e `uget_exemplo` para os equivalentes do seu projeto**. Todos os lugares que você _precisa_ editar algo logo no início estão marcados com um comentário `TODO`. Basta pesquisar nos arquivos.
 
 ## Estrutura
-O projeto deve estar numa pasta raiz em `kebab-case` (por exemplo, `uget-projeto-incrivel`).
+O projeto normalmente tem um nome em `kebab-case` (por exemplo, `uget-projeto-incrivel`).
+
+### Módulo principal
 
 O módulo principal deve ir numa pasta de mesmo nome, mas em `snake_case` (por exemplo, `uget_projeto_incrivel`). Dentro desse módulo, você pode fazer quantos módulos (arquivos `.py` ou outras pastas) quiser.
 
-Dentro do módulo, o arquivo `__main__.py` determina o entrypoint do programa (quando executado pelo python), importe os outros módulos (usando `from uget_projeto_incrivel import modulo`) e escreva sua função `main` nele, e chame essa função utilizando o guard  `if __name__ == "__main__"` (já está tudo exemplificado lá). O `__init__.py` só existe pra demarcar.
+Como exemplo, temos o módulo `bom_dia.py`
+
+O `__init__.py` só existe pra demarcar que é um módulo.
+
+#### Main
+Dentro do módulo, o arquivo `__main__.py` determina o entrypoint do programa (quando executado).
+
+Importe os outros módulos nescessários, usando `from uget_projeto_incrivel import modulo`.
+
+Escreva sua função `main`, e chame com o guard  `if __name__ == "__main__"`. Isso garante que a main não será executada caso você importe esse módulo como biblioteca.
+
+Tudo isso já está exemplificado lá, só olhar.
+
+### Testes
 
 Escreva testes dentro de uma pasta `tests` (também já tem um exemplo).
 
+### Metadados
+
 Informações sobre o pacote e mantenedores vão em `pyproject.toml`, lembre-se de preencher a info.
 
-## Como buildar e rodar
+O poetry cria uma `poetry.lock`, que contém as dependências de uma forma reproduzível. Explico mais sobre lá em baixo.
+
+Para adicionar suporte ao Nix, também temos uma `flake.nix`, e sua respectiva `flake.lock`.
+
+### Docker
+
+Caso seja um serviço, talvez você queira uma imagem pro docker. Incluí uma Dockerfile simples e eficiente para rodar o programa.
+
+## Como construir e rodar
 
 ### Poetry
 Utilizamos o [poetry](https://python-poetry.org/) como gestor de projeto e dependências.
