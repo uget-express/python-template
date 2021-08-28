@@ -1,0 +1,15 @@
+name: CI
+on: [push, pull_request]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+      - uses: abatilo/actions-poetry@v2
+      - name: Check formatting and types
+        run: |
+          poetry run flake8
