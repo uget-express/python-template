@@ -3,9 +3,12 @@
   description = "Projeto exemplo";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
-    poetry2nix.url = "github:nix-community/poetry2nix";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
+
+    poetry2nix.url = "github:nix-community/poetry2nix";
+    poetry2nix.inputs.nixpkgs.follows = "nixpkgs";
+    poetry2nix.inputs.flake-utils.follows = "flake-utils";
   };
 
   outputs = { self, nixpkgs, poetry2nix, flake-utils }:
