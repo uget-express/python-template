@@ -70,7 +70,7 @@ Caso seja um serviço, talvez você queira uma imagem pro docker. Incluí uma Do
 ### Poetry
 Utilizamos o [poetry](https://python-poetry.org/) como gestor de projeto e dependências.
 
-Você pode entrar num ambiente de desenvolvimento contendo as dependências release e dev utilizando `poetry shell`. Neste ambiente, basta usar `python uget_exemplo` para rodar o programa.
+Você pode entrar num ambiente de desenvolvimento contendo as dependências release e dev utilizando `poetry shell`. Neste ambiente, basta usar `python -m uget_exemplo` para rodar o programa.
 
 Alternativamente, ao invés de entrar na shell, você pode usar `poetry run uget-exemplo` para rodar o programa diretamente.
 
