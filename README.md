@@ -81,7 +81,7 @@ Caso você tenha o [Nix](https://nixos.org/) instalado (pode ser utilizado em Ma
 
 Você precisa ter o [suporte a Flakes habilitado](https://nixos.wiki/wiki/Flakes#Installing_flakes).
 
-Você pode entrar num ambiente de desenvolvimento igual ao do `poetry shell` utilizando `nix develop`. Neste ambiente, basta usar `python uget_exemplo` para rodar o programa.
+Você pode entrar num ambiente de desenvolvimento igual ao do `poetry shell` utilizando `nix develop`. Neste ambiente, basta usar `python -m uget_exemplo` para rodar o programa.
 
 Alternativamente, ao invés de entrar na shell, você pode usar `nix run` para rodar o programa diretamente. Você também pode usar `nix shell` para entrar num ambiente de release onde o comando `uget-exemplo` está disponível.
 
